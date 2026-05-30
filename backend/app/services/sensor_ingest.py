@@ -1,14 +1,14 @@
 import json
 from typing import Optional
 
-import aioredis
+import redis.asyncio as aioredis
 
 from app.core.config import settings
 from app.schemas.sensor import SensorReadingCreate
 
 
 async def get_redis() -> aioredis.Redis:
-    return await aioredis.from_url(settings.REDIS_URL, decode_responses=True)
+    return aioredis.from_url(settings.REDIS_URL, decode_responses=True)
 
 
 async def cache_latest_reading(reading: SensorReadingCreate) -> None:

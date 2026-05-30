@@ -55,7 +55,7 @@ export default function SoilGauge({ label, value, min, max, optimal, unit }: Pro
   );
 }
 
-function GaugeShell({ label, unit, empty }: { label: string; unit: string; empty?: boolean }) {
+function GaugeShell({ label, unit }: { label: string; unit: string; empty?: boolean }) {
   return (
     <div style={{ ...styles.card, opacity: 0.45 }}>
       <div style={styles.label}>{label}</div>
